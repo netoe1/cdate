@@ -1,7 +1,7 @@
 #ifndef CLOCKTIME_H
 #define CLOCKTIME_H
 
-#pragma region CDATE_STRUCT
+#pragma region structs
 
 typedef struct
 {
@@ -11,14 +11,13 @@ typedef struct
 	int hour;
 	int min;
 	int sec;
-	int ms;
 } CDATE_Date;
 
-#pragma endregion CDATE_STRUCT
+#pragma endregion structs
 
-#pragma region CDATE_FUNCTIONS
-
-
-#pragma endregion CDATE_FUNCTIONS
+#pragma region functions
+CDATE_Date getDateNow();
+char *getDateAsString(); // Dinamic pointer allocation, remember to release memory.
+#pragma endregion functions
 
 #endif
