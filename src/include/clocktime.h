@@ -17,7 +17,7 @@ typedef struct
 
 #pragma region functions
 CDATE_Date getDateNow();
-char *getDateAsString(); // Dinamic pointer allocation, remember to release memory.
+char *getDateAsString_dynamic(); // Dinamic pointer allocation, remember to release memory.
 #pragma endregion functions
 
 #endif
