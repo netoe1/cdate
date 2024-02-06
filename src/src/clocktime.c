@@ -10,33 +10,25 @@
 #pragma endregion conts
 /*--------------------*/
 #pragma region structs
-// static struct CDATE_string
-// {
-//     char day[2];
-//     char month[2];
-//     char year[2];
-//     char hour[2];
-//     char min[2];
-//     char sec[2];
-// };
 
 #pragma endregion structs
 /*--------------------*/
 #pragma region implementation
+
 CDATE_Date getDateNow()
 {
     CDATE_Date convert;
     time_t currentTime = time(&currentTime);
     struct tm *localTime = localtime(&currentTime);
-
     convert.day = localTime->tm_mday;
     convert.month = localTime->tm_mon + TO_SUM_MON;
     convert.year = localTime->tm_year + TO_SUM_YEAR;
     convert.hour = localTime->tm_hour;
+    convert.min = localTime->tm_min;
     convert.sec = localTime->tm_sec;
     return convert;
 }
-char *getDateAsString_dynamic()
+pDATE getDateAsString_dynamic()
 {
     time_t currentTime;
     time(&currentTime);
@@ -63,5 +55,13 @@ char *getDateAsString_dynamic()
 
     return formattedDate;
 }
+pDATE getFullDateAsString()
+{
+    CDATE_Date dateNow = getDateNow();
 
+    char *ret = (char *)malloc(22 * sizeof(char *));
+
+    sprintf(ret, "%02d/%02d/%d %02d:%02d:%02d", dateNow.day, dateNow.month, dateNow.year, dateNow.hour, dateNow.min, dateNow.sec);
+    return ret;
+}
 #pragma endregion implementation

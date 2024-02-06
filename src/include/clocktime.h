@@ -1,6 +1,13 @@
 #ifndef CLOCKTIME_H
 #define CLOCKTIME_H
 
+#pragma region namespaces
+
+#define pDATE char *
+#define freeDate free
+
+#pragma endregion namespaces
+
 #pragma region structs
 
 typedef struct
@@ -16,8 +23,11 @@ typedef struct
 #pragma endregion structs
 
 #pragma region functions
+
 CDATE_Date getDateNow();
-char *getDateAsString_dynamic(); // Dinamic pointer allocation, remember to release memory.
+pDATE getDateAsString_dynamic(); // Dinamic ptr allocation, free memory with free() or freeDate() namespace.
+pDATE getFullDateAsString();	 // Dinamic pointer allocation, free memory with free() or freeDate() namespace.
+
 #pragma endregion functions
 
 #endif
