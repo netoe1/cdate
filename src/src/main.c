@@ -7,6 +7,6 @@ int main(void)
     setlocale(LC_ALL, "");
     pDATE data = getFullDateAsString();
     printf(data);
-    freeDate(data);
+    CDATE_free(data);
     return 0;
 }

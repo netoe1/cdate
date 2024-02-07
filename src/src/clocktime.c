@@ -28,7 +28,7 @@ CDATE_Date getDateNow()
     convert.sec = localTime->tm_sec;
     return convert;
 }
-pDATE getDateAsString_dynamic()
+pDATE getDateAsString()
 {
     time_t currentTime;
     time(&currentTime);

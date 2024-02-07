@@ -3,8 +3,8 @@
 
 #pragma region namespaces
 
-#define pDATE char *
-#define freeDate free
+typedef char *pDATE;
+#define CDATE_free(pdate) free(pdate)
 
 #pragma endregion namespaces
 
@@ -25,8 +25,8 @@ typedef struct
 #pragma region functions
 
 CDATE_Date getDateNow();
-pDATE getDateAsString_dynamic(); // Dinamic ptr allocation, free memory with free() or freeDate() namespace.
-pDATE getFullDateAsString();	 // Dinamic pointer allocation, free memory with free() or freeDate() namespace.
+pDATE getDateAsString(); // Dinamic ptr allocation, free memory with CDATE_free() or free() function availble in stdlib.h namespace.
+pDATE getFullDateAsString();	 // Dinamic ptr allocation, free memory with CDATE_free() or free() function availble in stdlib.h namespace.
 
 #pragma endregion functions
 
